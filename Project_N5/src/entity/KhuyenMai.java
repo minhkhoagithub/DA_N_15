@@ -14,34 +14,34 @@ public class KhuyenMai {
     private static int soThuTuKMTrenHoaDon = 0;
     private static int soThuTuKMTrenGoiBuffet = 0;
 
-    public KhuyenMai(String noiDungKM, LocalDate thoiGianBD, LocalDate thoiGianKT, TrangThaiKhuyenMai trangThaiKhuyenMai, String loaiKhuyenMai) {
+    public KhuyenMai(String noiDungKM, LocalDate thoiGianBD, LocalDate thoiGianKT, TrangThaiKhuyenMai trangThaiKhuyenMai) {
         this.noiDungKM = noiDungKM;
         this.thoiGianBD = thoiGianBD;
         this.thoiGianKT = thoiGianKT;
         this.trangThaiKhuyenMai = trangThaiKhuyenMai;
-        this.maKM = generateMaKM(loaiKhuyenMai);
+        this.maKM = generateMaKM();
     }
 
-    private String generateMaKM(String loaiKhuyenMai) {
+    private String generateMaKM() {
         int soThuTu;
+        String loaiKhuyenMai = getClass().getSimpleName();
         String prefix;
 
-        switch (loaiKhuyenMai) {
-            case "MON":
+        soThuTu = switch (loaiKhuyenMai) {
+            case "KhuyenMaiTrenMon" -> {
                 prefix = "KMMA-";
-                soThuTu = ++soThuTuKMTheoMon;
-                break;
-            case "HOA_DON":
+                yield ++soThuTuKMTheoMon;
+            }
+            case "KhuyenMaiHoaDon" -> {
                 prefix = "KMHD-";
-                soThuTu = ++soThuTuKMTrenHoaDon;
-                break;
-            case "BUFFET":
+                yield ++soThuTuKMTrenHoaDon;
+            }
+            case "KhuyenMaiTrenGoiBuffet" -> {
                 prefix = "KMBF-";
-                soThuTu = ++soThuTuKMTrenGoiBuffet;
-                break;
-            default:
-                throw new IllegalArgumentException("Loại khuyến mãi không hợp lệ");
-        }
+                yield ++soThuTuKMTrenGoiBuffet;
+            }
+            default -> throw new IllegalArgumentException("Loại khuyến mãi không hợp lệ");
+        };
 
         return prefix + String.format("%03d", soThuTu);
     }
@@ -70,7 +70,10 @@ public class KhuyenMai {
         return thoiGianKT;
     }
 
-    public void setThoiGianKT(LocalDate thoiGianKT) {
+    public void setThoiGianKT(LocalDate thoiGianKT) throws IllegalArgumentException {
+        if (thoiGianKT.isBefore(thoiGianBD)) {
+            throw new IllegalArgumentException("Thời gian kết thúc phải sau thời gian bắt đầu");
+        }
         this.thoiGianKT = thoiGianKT;
     }
 
@@ -84,13 +87,13 @@ public class KhuyenMai {
 
     @Override
     public String toString() {
-        return "KhuyenMai{" +
+        return getClass().getSimpleName() +
                 "maKM='" + maKM + '\'' +
                 ", noiDungKM='" + noiDungKM + '\'' +
                 ", thoiGianBD=" + thoiGianBD +
                 ", thoiGianKT=" + thoiGianKT +
                 ", trangThaiKhuyenMai=" + trangThaiKhuyenMai +
-                '}';
+                '\'';
     }
 }
 
