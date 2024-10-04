@@ -7,6 +7,7 @@ public enum TrangThaiPhucVu {
     private TrangThaiPhucVu(String trangThaiPhucVu) {
         this.trangThaiPhucVu = trangThaiPhucVu;
     }
+
     public String getTrangThaiPhucVu() {
         return trangThaiPhucVu;
     }
