@@ -34,4 +34,12 @@ public class MonAn {
     public void setGiaTien(double giaTien) {
         this.giaTien = giaTien;
     }
+
+    @Override
+    public String toString() {
+        return getClass().toString() +
+                "maMon='" + maMon + '\'' +
+                ", tenMon='" + tenMon + '\'' +
+                ", giaTien=" + giaTien;
+    }
 }

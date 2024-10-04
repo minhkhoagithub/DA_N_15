@@ -7,9 +7,9 @@ import java.time.LocalDate;
 public class KhuyenMai {
     private String maKM;
     private String noiDungKM;
-    LocalDate thoiGianBD;
-    LocalDate thoiGianKT;
-    TrangThaiKhuyenMai trangThaiKhuyenMai;
+    private LocalDate thoiGianBD;
+    private LocalDate thoiGianKT;
+    private TrangThaiKhuyenMai trangThaiKhuyenMai;
     private static int soThuTuKMTheoMon = 0;
     private static int soThuTuKMTrenHoaDon = 0;
     private static int soThuTuKMTrenGoiBuffet = 0;
@@ -74,7 +74,9 @@ public class KhuyenMai {
         if (thoiGianKT.isBefore(thoiGianBD)) {
             throw new IllegalArgumentException("Thời gian kết thúc phải sau thời gian bắt đầu");
         }
-        this.thoiGianKT = thoiGianKT;
+        else {
+            this.thoiGianKT = thoiGianKT;
+        }
     }
 
     public TrangThaiKhuyenMai getTrangThaiKhuyenMai() {

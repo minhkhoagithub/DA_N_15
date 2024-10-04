@@ -5,8 +5,8 @@ import java.time.LocalDate;
 public class NguoiDung {
     private String maND;
     private String tenND;
-    LocalDate ngaySinh;
-    LocalDate ngayVaoLam;
+    private LocalDate ngaySinh;
+    private LocalDate ngayVaoLam;
     private String soDienThoai;
     private String diaChi;
     private static int soThuTu = 0; // Biến tĩnh để giữ số thứ tự
