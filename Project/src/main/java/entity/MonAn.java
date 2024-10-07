@@ -1,6 +1,6 @@
 package entity;
 
-public class MonAn {
+public abstract class MonAn {
     private String maMon;
     private String tenMon;
     private double giaTien;

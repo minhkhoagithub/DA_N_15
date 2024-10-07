@@ -4,7 +4,7 @@ import enums.TrangThaiKhuyenMai;
 
 import java.time.LocalDate;
 
-public class KhuyenMai {
+public abstract class KhuyenMai {
     private String maKM;
     private String noiDungKM;
     private LocalDate thoiGianBD;

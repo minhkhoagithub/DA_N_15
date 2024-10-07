@@ -2,7 +2,7 @@ package entity;
 
 import java.time.LocalDate;
 
-public class NguoiDung {
+public abstract class NguoiDung {
     private String maND;
     private String tenND;
     private LocalDate ngaySinh;
