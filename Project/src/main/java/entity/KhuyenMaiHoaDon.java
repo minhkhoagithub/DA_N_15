@@ -8,11 +8,18 @@ public class KhuyenMaiHoaDon extends KhuyenMai{
     private double giaTriPhanTramGiam;
     private double mocTongTienApDung;
 
-    public KhuyenMaiHoaDon(String noiDungKM, LocalDate thoiGianBD, LocalDate thoiGianKT, TrangThaiKhuyenMai trangThaiKhuyenMai,double giaTriPhanTramGiam,double mocTongTienApDung) {
+    public KhuyenMaiHoaDon(String maKM, String noiDungKM, LocalDate thoiGianBD, LocalDate thoiGianKT,
+		TrangThaiKhuyenMai trangThaiKhuyenMai, double giaTriPhanTramGiam, double mocTongTienApDung) {
+		super(maKM, noiDungKM, thoiGianBD, thoiGianKT, trangThaiKhuyenMai);
+		this.giaTriPhanTramGiam = giaTriPhanTramGiam;
+		this.mocTongTienApDung = mocTongTienApDung;
+	}
+
+	public KhuyenMaiHoaDon(String noiDungKM, LocalDate thoiGianBD, LocalDate thoiGianKT, TrangThaiKhuyenMai trangThaiKhuyenMai,double giaTriPhanTramGiam,double mocTongTienApDung) {
         super(noiDungKM, thoiGianBD, thoiGianKT, trangThaiKhuyenMai);
         this.giaTriPhanTramGiam = giaTriPhanTramGiam;
         this.mocTongTienApDung = mocTongTienApDung;
-    }
+    } 
 
     public double getGiaTriPhanTramGiam() {
         return giaTriPhanTramGiam;

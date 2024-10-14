@@ -8,7 +8,7 @@ public class TaiKhoan {
         this.tenDangNhap = tenDangNhap;
         this.matKhau = matKhau;
     }
-
+    
     public String getTenDangNhap() {
         return tenDangNhap;
     }

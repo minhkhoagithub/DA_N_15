@@ -9,18 +9,29 @@ public abstract class NguoiDung {
     private LocalDate ngayVaoLam;
     private String soDienThoai;
     private String diaChi;
-    private static int soThuTu = 0; // Biến tĩnh để giữ số thứ tự
+    private static int soThuTu = 0;
 
     public NguoiDung(String tenND, LocalDate ngaySinh, LocalDate ngayVaoLam, String soDienThoai, String diaChi) {
-        this.tenND = tenND;
-        this.ngaySinh = ngaySinh;
-        this.ngayVaoLam = ngayVaoLam;
-        this.soDienThoai = soDienThoai;
-        this.diaChi = diaChi;
-        this.maND = generateMaND(ngayVaoLam);
+        setTenND(tenND);
+        setNgaySinh(ngaySinh);
+        setNgayVaoLam(ngayVaoLam);
+        setSoDienThoai(soDienThoai);
+        setDiaChi(diaChi);
+        setDiaChi(diaChi);
     }
 
-    private String generateMaND(LocalDate ngayVaoLam) {
+    public NguoiDung(String maND, String tenND, LocalDate ngaySinh, LocalDate ngayVaoLam, String soDienThoai,
+			String diaChi) {
+		super();
+		this.maND = maND;
+		this.tenND = tenND;
+		this.ngaySinh = ngaySinh;
+		this.ngayVaoLam = ngayVaoLam;
+		this.soDienThoai = soDienThoai;
+		this.diaChi = diaChi;
+	}
+
+	private String generateMaND(LocalDate ngayVaoLam) {
         soThuTu++;
         String year = String.valueOf(ngayVaoLam.getYear()).substring(2);
         String month = String.format("%02d", ngayVaoLam.getMonthValue());

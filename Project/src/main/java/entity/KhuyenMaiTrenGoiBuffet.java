@@ -12,7 +12,13 @@ public class KhuyenMaiTrenGoiBuffet extends KhuyenMai{
         setGiaTriTienGiam(giaTriTienGiam);
     }
 
-    public double getGiaTriTienGiam() {
+    public KhuyenMaiTrenGoiBuffet(String maKM, String noiDungKM, LocalDate thoiGianBD, LocalDate thoiGianKT,
+			TrangThaiKhuyenMai trangThaiKhuyenMai, double giaTriTienGiam) {
+		super(maKM, noiDungKM, thoiGianBD, thoiGianKT, trangThaiKhuyenMai);
+		setGiaTriTienGiam(giaTriTienGiam);
+	}
+
+	public double getGiaTriTienGiam() {
         return giaTriTienGiam;
     }
 

@@ -7,7 +7,13 @@ public class NguoiQuanLy extends NguoiDung{
         super(tenND, ngaySinh, ngayVaoLam, soDienThoai, diaChi);
     }
 
-    @Override
+    
+    
+    public NguoiQuanLy(String maND, String tenND, LocalDate ngaySinh, LocalDate ngayVaoLam, String soDienThoai, String diaChi) {
+		super(maND, tenND, ngaySinh, ngayVaoLam, soDienThoai, diaChi);
+	}
+
+	@Override
     public String toString() {
         return super.toString();
     }

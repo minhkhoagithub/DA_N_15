@@ -6,9 +6,9 @@ public class GoiBuffet {
     private double giaTien;
 
     public GoiBuffet(String maGoi, String tenGoi, double giaTien) {
-        this.maGoi = maGoi;
-        this.tenGoi = tenGoi;
-        this.giaTien = giaTien;
+    	setMaGoi(maGoi);
+    	setTenGoi(tenGoi);
+    	setGiaTien(giaTien);
     }
 
     public String getMaGoi() {
